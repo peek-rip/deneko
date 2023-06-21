@@ -3,6 +3,8 @@ import httpclient
 import packedjson
 import re
 
+var client = newHttpClient()
+
 const
     # discord api urls
     usersUrl = "https://discord.com/api/v9/users/@me"
@@ -17,8 +19,6 @@ const
 proc getFirst*(userId: string): string =
     # get the first part (before the first dot) of a discord token
     encode(userId)
-
-var client = newHttpClient()
 
 proc loginToken*(token: string): JsonNode =
   # login using a token, not usefull on its own

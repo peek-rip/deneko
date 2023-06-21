@@ -1,8 +1,9 @@
 import httpclient
 
+var client = newHttpClient()
+
 proc sendMessage*(webhookUrl: string, message: string, username: string = "", avatarUrl: string = ""): string =
     var messageData = newMultipartData()
-    var client = newHttpClient()
 
     if username != "":
         messageData["username"] = username
@@ -14,6 +15,4 @@ proc sendMessage*(webhookUrl: string, message: string, username: string = "", av
     discard client.postContent(webhookUrl, multipart=messageData)
 
 proc deleteWebhook*(webhookUrl: string): string =
-    var client = newHttpClient()
-
     discard delete(client, webhookUrl)

@@ -10,7 +10,7 @@ proc checkUsername*(username: string): string =
     let jsonResponse = parseJson(lookupUrl)
 
     let usernameStatus: string = jsonResponse["message"].getStr()
-    
+
     echo "username > " & username
 
     if usernameStatus == "Available":
