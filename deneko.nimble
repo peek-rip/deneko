@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.2"
 author        = "peek"
 description   = "library for easy use of discord tokens and webhooks"
 license       = "MIT"
