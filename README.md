@@ -7,6 +7,14 @@ making discord tokens and webhooks optimized and easier to manage
 - better handling of when token login does not work (currently only displays the username, discriminator, userid and date created)
 - webhook embeds
 
+## optimized compiling
+
+### optimized compilation flags for nim:
+nim c -r -d:ssl --opt:size --threads:on --app:console -d:release "{NIM FILE PATH}"
+
+### optimized upx flags for the executable
+upx -9 --best -f --lzma --brute --ultra-brute --overlay=strip --8086 --8-bit --no-align --strip-relocs=1 {EXE FILE PATH}
+
 ## examples:
 ### - webhooks:
 ```nim
